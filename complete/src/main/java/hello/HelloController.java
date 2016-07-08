@@ -30,7 +30,7 @@ public class HelloController {
             return "redirect:/connect/facebook";
         }
 
-        model.addAttribute("facebookProfile", facebook.userOperations().getUserProfile());
+        model.addAttribute("facebookProfile", facebook.friendOperations().getFriendLists());
         PagedList<Post> feed = facebook.feedOperations().getFeed();
         model.addAttribute("feed", feed);
         return "hello";
